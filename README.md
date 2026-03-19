@@ -86,17 +86,28 @@ Uma pagina web estática em um container Docker
 
    Explicação dos parâmetros:
    -d: Executa em background (detached)
+   
    --name mysql-container: Nome do container (importante para o PHP conectar)
+   
    -e MYSQL_ROOT_PASSWORD: Senha do root
+   
    -e MYSQL_DATABASE: Cria o banco automaticamente
+   
    -v mysql_data:/var/lib/mysql: Volume para persistência (REQUISITO 5)
+   
    -p 3306:3306: Mapeia a porta
+   
    mysql:8.0: Imagem oficial do MySQL
 
 5: Aguardar o MySQL Inicializar
 
    5.1 guarde 30-60 segundos para o MySQL estar pronto: docker build -t php-app-lab2 .
 
+
+# 6: Construir a Imagem da Aplicação PHP
+
+   6.1 No diretório do projeto (onde está o Dockerfile): docker build -t php-app-lab2 .
+   
 # 7: Executar o Container PHP
 
    docker run -d \
