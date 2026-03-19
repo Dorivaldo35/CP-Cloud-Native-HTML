@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB 1 - Docker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá! Minha Página no Docker</h1>
+    <p>Esta é uma página estática rodando em um container NGINX</p>
+    <img src="minha-imagem.jpg" alt="Minha Imagem" width="400">
+</body>
+</html>

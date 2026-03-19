@@ -1,0 +1,7 @@
+# Imagem base NGINX leve com suporte a ARM/M1
+FROM nginx:alpine
+
+# Expõe a porta 80 do container
+EXPOSE 80
+
+# Os arquivos serão montados via bind mount (não usamos COPY)
