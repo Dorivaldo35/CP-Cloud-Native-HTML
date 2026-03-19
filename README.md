@@ -51,3 +51,71 @@ Uma pagina web estática em um container Docker
 
   
 
+
+# LAB 2 - PHP + MySQL em Containers Docker
+
+
+# 1: Criar a Aplicação PHP
+
+   1.1 Crie uma pasta para o projeto:
+
+   1.2 kdir nome-lab-php-mysql
+   cd nome-lab-php-mysql
+
+   1.3 Arquivo index.php (Página principal)
+
+   <img width="1142" height="1002" alt="image" src="https://github.com/user-attachments/assets/351d3f6d-fa57-4865-a182-656ebfb4ae5d" />
+
+   1.4 Arquivo info.php (Para testar PHP)
+
+   <img width="234" height="174" alt="image" src="https://github.com/user-attachments/assets/4aebbb8e-c54e-4f82-9484-d65602615564" />
+
+# 2: Criar o Dockerfile da Aplicação PHP
+
+   2.1 Crie um arquivo chamado Dockerfile (sem extensão):
+
+   <img width="906" height="862" alt="image" src="https://github.com/user-attachments/assets/419e2782-6c3e-4cf7-8f21-d01b1006a3e2" />
+
+# 3: Criar o Volume Docker para Persistência
+
+   3.1 Execute no terminal: docker volume ls
+
+# 4: Subir o Container MySQL
+
+   <img width="682" height="334" alt="image" src="https://github.com/user-attachments/assets/509a014b-f0f1-4303-a66a-0c94ad210e66" />
+
+   Explicação dos parâmetros:
+   -d: Executa em background (detached)
+   --name mysql-container: Nome do container (importante para o PHP conectar)
+   -e MYSQL_ROOT_PASSWORD: Senha do root
+   -e MYSQL_DATABASE: Cria o banco automaticamente
+   -v mysql_data:/var/lib/mysql: Volume para persistência (REQUISITO 5)
+   -p 3306:3306: Mapeia a porta
+   mysql:8.0: Imagem oficial do MySQL
+
+5: Aguardar o MySQL Inicializar
+
+   5.1 guarde 30-60 segundos para o MySQL estar pronto: docker build -t php-app-lab2 .
+
+# 7: Executar o Container PHP
+
+   docker run -d \
+   --name php-container \
+   --link mysql-container:mysql \
+   -p 8081:80 \
+   php-app-lab2
+
+
+# 8: Verificar se os Containers Estão Rodando
+
+   8.1 Comando: docker ps
+
+
+# 9: Testar a Aplicação
+
+   curl http://localhost:8081
+   
+
+
+
+
