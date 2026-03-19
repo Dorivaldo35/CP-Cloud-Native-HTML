@@ -128,6 +128,8 @@ Uma pagina web estática em um container Docker
 
    curl http://localhost:8081
    
+   
+   <img width="1098" height="702" alt="image" src="https://github.com/user-attachments/assets/e4dacd45-0e2d-443e-8c46-b5af6a69066e" />
 
 
 
