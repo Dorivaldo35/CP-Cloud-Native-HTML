@@ -46,6 +46,7 @@ Uma pagina web estática em um container Docker
 
   7.1 Liste os containers em execução
   docker ps
+  
   7.2 Acesse no navegador: http://localhost:8080
 
   
